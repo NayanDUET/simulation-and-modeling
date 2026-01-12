@@ -1,0 +1,35 @@
+
+a1 = int(input("Enter a1"))
+a2 = int(input("Enter a2"))
+m1 = int(input("Enter m1"))
+m2 = int(input("Enter m2"))
+p = (a2-a1)/(m1-m2)
+Q = a1+m1*p
+S = a2+m2*p
+print(p)
+print(round(Q))
+
+import matplotlib.pyplot as plt
+import numpy as np
+# Define x range
+x = np.linspace(p - 10, p + 10, 100)
+
+# Line equations
+y1 = a1 + m1 * x
+y2 = a2 + m2 * x
+
+# Plot
+plt.figure()
+plt.plot(x, y1, label="Line 1: y = a1 + m1*x")
+plt.plot(x, y2, label="Line 2: y = a2 + m2*x")
+
+# Intersection point
+plt.scatter(p, Q)
+plt.text(p, Q, f"  ({round(p,2)}, {round(Q,2)})")
+
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Intersection of Two Lines")
+plt.legend()
+plt.grid(True)
+plt.show()

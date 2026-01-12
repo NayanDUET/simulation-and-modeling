@@ -1,0 +1,29 @@
+> Sagor_DUET:
+import math
+g = 9.8
+pos = int(input("Enter the initial position"))
+t = math.sqrt(pos/4.9)
+
+t1 , h = 0.0, pos
+print ("\nTime(s)\tHeight(m)\ tVelocity (m/s)")
+while(h>0):
+  v = g*t1
+  print (round(t1 , 2) , "\t" , round(h, 2), "\t\t", round(v, 2))
+  t1 += 0.5
+  h = 100-0.5*g*t1**2
+v = g*t;
+print (round(t1 , 2) , "\t" , 0.0, "\t\t", round(v, 2))
+
+> Sagor_DUET:
+import numpy as np
+import numpy. polynomial . polynomial as poly
+import matplotlib . pyplot as plt
+x = np. linspace (0, t , num=10)
+xt = poly. polyval(x,[ pos ,0 , -4.9])
+plt . figure ( figsize =(8,6))
+plt . plot (x, xt)
+plt . xticks (np. arange(0 , t , 0.5))
+plt . xlabel ( 'Time (seconds)')
+plt . ylabel ( 'Height (meters)')
+plt . text (x=t+0.1, y = 0, s = f"Impact Velocity : {v}")
+plt .show()
